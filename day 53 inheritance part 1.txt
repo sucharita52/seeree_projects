@@ -1,0 +1,263 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+	data member 
+	method 
+	constructor and repr 
+
+		CLASS 
+
+			STATIC 
+
+			DEF __INIT__ ( SELF ) : 
+				SELF . NONSTATIC ATTR 
+
+			DEF __REPR__ ( SELF ) : 
+				STATIC + NON STATIC 
+
+	destructor and gc 
+
+INHERITANCE 
+~~~~~~~~~~~~~~~~~
+level 1 : 
+what is inheritance 
+~~~~~~~~~~~~~~~~~~~~~
+
+	creating a new class from an existing class is known as inheritance. 
+	creating a child class from an parent class is known as inheritance. 
+	creating a derived class from an base class is known as inheritance. 
+	creating a sub class from an super class is known as inheritance. 
+	
+		existing class / parent class / base class / super class 
+		new class / child class / derived class / sub class 
+
+level 2 : 
+syntax to promote inheritance 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	java 
+
+		class parent 
+		{
+		}
+
+		class child extends parent 
+		{
+		}
+
+	python 
+
+		class parent : 
+			pass 
+		class child ( parent ) :
+			pass  
+
+level 3 : 
+attrs during inheritance 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	parent static attr 
+	parent non static attr 
+	child static attr 
+	child non static attr 
+
+	class parent : 
+		parent_static 
+		def __init__ ( self ) : 
+			self . parent_non_static 
+
+	class child ( parent ) : 
+		child_static 
+		def __init__ ( self ) : 
+			self . child_non_static 
+
+class parent :
+
+        psdm = 'parent static data'
+
+        def __init__ ( self ) :
+
+                self . pnsdm = 'parent non static data '
+
+class child ( parent ) :
+
+        csdm = 'child static data'
+
+        def __init__ ( self ) :
+
+                self . cnsdm = 'child non static data'
+
+============================================================================
+level 4 : 
+medium to access attrs 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	psdm 
+		pcls 
+		pobj 
+		ccls 
+		cobj 	
+	pnsdm 
+		pobj 
+		* cobj -> super () 
+	csdm 
+		ccls 
+		cobj 
+	cnsdm 
+		cobj 
+
+class parent :
+
+        psdm = 'parent static data'
+
+        def __init__ ( self ) :
+
+                self . pnsdm = 'parent non static data '
+
+class child ( parent ) :
+
+        csdm = 'child static data'
+
+        def __init__ ( self ) :
+                super () . __init__ ()
+                self . cnsdm = 'child non static data'
+
+pobj = parent ()
+cobj = child ()
+
+print ( parent . psdm )
+print ( pobj . psdm )
+print ( child . psdm )
+print ( cobj . psdm )
+
+print ( pobj . pnsdm )
+print ( cobj . pnsdm )
+
+print ( child . csdm )
+print ( cobj . csdm )
+
+print ( cobj . cnsdm )
+
+
+=================================================================================
+LEVEL 5 : 
+REAL TIME SITUATION 
+~~~~~~~~~~~~~~~~~~~~~
+
+class Person :
+
+        def __init__ ( self , name , gender , age ) :
+                self . name = name
+                self . gender = gender
+                self . age = age
+
+        def __repr__ ( self ) :
+                return f"{self.name} {self.gender} {self.age}"
+
+
+class Employee ( Person ):
+
+        def __init__ ( self , name , gender , age , id , sal ) :
+                super () . __init__ ( name , gender , age )
+                self . id = id
+                self . sal = sal
+
+        def __repr__ ( self ) :
+                return  super () . __repr__ () + f" {self.id} {self.sal}"
+
+class Manager ( Employee ) :
+
+        def __init__ ( self , name, gender , age , id , sal , location,
+project ) :
+                super () . __init__ ( name , gender , age , id , sal )
+                self . location = location
+                self . project = project
+
+        def __repr__ ( self ) :
+
+                return super () . __repr__ () + f" {self.location}
+{self.project}"
+
+obj = Person ( 'sita' , 'female' , 25 )
+print ( obj )
+
+obj = Employee ( 'sita' , 'female' , 25, 'seeree123' , 150000 )
+print ( obj )
+
+obj = Manager ( 'sita' , 'female' , 25, 'seeree1213' , 500000 , 'bbsr' , 'python' )
+print ( obj )
+
+============================================================================
+
+	INHERITNACE IS ONLY USED TO REUSE THE LOGIC OF PARENT CLASS IN CHILD CLASS. 
+
+=============================================================================
+
+TYPES OF INHERITANCE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

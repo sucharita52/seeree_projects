@@ -1,0 +1,170 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~~
+	class and object 
+	data member 
+	method 
+	constructor and representation 
+
+		init -> constructor -> create object 
+		repr -> representation -> print object
+
+		class 
+			static 
+			def __init__ ( self , param ) : 
+				non static 
+
+			def __repr__ ( self ) : 
+				print( static + non static )
+	
+DESTRUCTOR AND GARBAGE COLLECTOR 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+level 1 : how to def destructor 
+
+	constructor 
+		1. method 
+		2. __init__
+		3. self 
+		4. return None 
+	destructor 
+		1. method 
+		2. __del__
+		3. self 
+		4. return None 
+
+level 2 : constructor vs destructor 
+
+	-- ctor -> object creation -> first 
+	-- dtor -> object destruction -> last 
+
+	-- ctor may have some param 
+	-- dtor may not have any param 
+
+level 3 : anonymous object 
+
+	-- object is basically two types 
+
+		-- named object 
+			
+			syntax : objName = className () 
+	
+		-- anonymous object 
+
+			syntax : className () 
+
+		-- for named object pvm call dtor after program termination 
+		-- for anonymous object pvm call dtro before evaluating next stmt. 
+
+class Test :
+
+        def __init__ ( self ) :
+                print ( "hello i am ctor")
+                return None
+
+        def __del__ ( self ) :
+                print ( "hello i am dtor")
+                return None
+
+print ( 'program start ')
+obj1 = Test ()
+Test () # anonymous object 
+obj3 = Test ()
+
+del obj1
+print ( 'program end ')
+-------------------------------------------------------
+
+# engine code 
+class Who :
+
+        def __init__ ( self , name ) :
+                self . name = name
+                print (f"{self.name} got created")
+
+        def __del__ ( self ) :
+                print (f"{self.name} got deleted")
+
+
+
+# drive code 
+print ( "program start ")
+obj1 = Who ( 'sita' )
+Who ( 'ravan' )
+obj2 = Who ( 'rama' )
+del obj1
+print ( "program end")
+
+
+lelvel 4 : garbage collector 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[seeree@localhost demo]$ cat test.py 
+
+
+# engine code 
+class Who : 
+
+        def __init__ ( self , name ) : 
+                self . name = name 
+                print (f"{self.name} got created")
+
+        def __del__ ( self ) : 
+                print (f"{self.name} got deleted")
+
+
+
+>>> # driver code 
+>>> 
+>>> from test import Who 
+>>> 
+>>> x = Who ( 'sita' )
+sita got created
+>>> y = x 
+>>> z = y 
+>>> 
+>>> from sys import getrefcount 
+>>> getrefcount ( z )
+4
+>>> del x 
+>>> getrefcount ( z )
+3
+>>> del y 
+>>> getrefcount ( z )
+2
+>>> del z 
+sita got deleted
+>>> 
+
+-------------------------------------------------------------------------
+
+	-- DEL IS NOT REPONSIBLE TO DEALTE AN OBJECT 
+	-- DEL IS ONLY RESPONSIBLE TO DELTE REFRENCE 
+
+	-- TO DELATE AN OBJECT GARBAGE COLLECTOR IS RESPONSIBLE 
+
+	-- GARBAGE COLLECTOR WILL DELETE AN OBJECT 
+	WHEN IT BECOMES ORPHAN/. 
+
+	-- REF COUNT OF AN ORPHAN OBJECT IS 0 
+
+	-- TO GET THE REF COUNT WE HAVE TO USE getrefcount () 
+
+	-- getrefcount FUNCTION BELONGS TO sys MODULE. 
+
+		from sys import getrefcount 
+
+=====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

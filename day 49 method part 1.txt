@@ -1,0 +1,267 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+		why class 
+		how to def class 
+		why object 
+		how to def object 
+		class vs object 
+
+	data member / attr 
+		what is attr 
+		types of attr
+		class attr vs inst attr 
+		static data member vs non static data member 
+		crud opertion 
+		real time situation 
+			monolithic approach 
+			function approach 
+
+METHOD / MEMBER FUNCTION 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	why method 
+		to get encapsulation 
+	what is method 
+		method is nothing but a function 
+		def inside a class. 
+	merits of using method 
+		readability 
+		reuseability 
+		maintainability 
+		modularstyle programming 
+		encapsulation 
+			binding of related info and operation into a single unit
+			binding of related attr and method into a single class 
+
+			class 
+				method 
+					dataMember 
+-------------------------------------------------------------------------
+	TYPES OF DATA MEMBER 
+		1. NON STATIC DATA MEMBER 
+		2. STATIC DATA MEMBER / CLASS DATA MEMBER 
+
+	TYPES OF METHODS : 
+		1. NON STATIC METHOD  
+		2. CLASS METHOD 
+		3. STATIC METHOD 
+		
+	FOR DATA MEMBER , STATIC DATA MEMBER AND CLASS DATA MEMBER IS SAME. 
+	BUT 
+	FOR METHOD, STATIC METHOD AND CLASS METHOD IS NOT SAME. 
+----------------------------------------------------------------------
+
+	HOW TO DEF NON STATIC METHOD 
+
+		class Test : 
+			def m1 ( self ) : 
+				pass 
+
+	HOW TO DEF CLASS METHOD 
+
+		class Test : 
+			@classmethod 
+			def m2 ( cls ) : 
+				pass 
+
+	HOW TO DEF STATIC METHOD 
+
+		class Test : 
+			@staticmethod 
+			def m3 () : 
+				pass 
+---------------------------------------------------------------
+
+	HOW TO CALL NON STATIC METHOD 
+
+		objName . m1 () 
+		className . m1 () 		-> 	TypeError 
+		className . m1 ( objName ) 
+
+	HOW TO CALL CLASS METHOD 
+
+		className . m2 () 
+		objName . m2 () 
+
+	HOW TO CALL STATIC METHOD 
+		
+		className . m3 () 
+		objName . m3 () 
+
+class Test :
+
+        def m1 ( self ) :       # non static method 
+                print ( "hello i am non static method ")
+
+        @classmethod
+        def m2 ( cls ) :        # class method 
+                print ( "hello i am class metohd")
+
+        @staticmethod
+        def m3 ( ) :            # static method 
+                print ( "hello i am static method")
+
+obj = Test ()
+
+Test . m1 ( obj  )
+obj . m1 ()
+
+Test . m2 ()
+obj . m2 ()
+
+Test . m3 ()
+obj . m3 ()
+
+=====================================================================================
+
+	method 
+		why method 
+		what is method 
+		merits of method 
+		types of method 
+		how to def 
+		how to call 
+
+=========================================================================
+
+	CLS 
+	~~~~~~~~~~~~~
+
+		WHAT IS CLS 
+
+			cls is the compulsory param for a class method. 
+			cls is not a keyword. 
+			cls is an identifier. 
+			cls is a standard identifier. 
+
+		WHY CLS 
+
+			cls is responsible 
+			to target class namespace. 
+
+			by targetting class namespace 
+			we can deal with sdm. 
+
+			monolithic : 
+				Employee . compName = None 
+
+			function : 
+
+				def createSdm ( className ) : 
+					className . compName = None 
+				createSdm ( Employee ) 
+
+			method : 
+				class Employee : 
+					@classmethod 
+					def createSdm ( cls  ) : 
+						cls . compName = None 
+				Employee . createSdm (  ) 
+
+
+	SELF 
+	~~~~~~~~~~~~~~
+
+		WHAT IS SELF 
+
+			self is the cmpulsory param for non static method. 
+			self is not a keyword. 
+			self is an identifier. 
+			self is a standard identifier. 
+		
+		WHY SELF 
+
+			self if responsible to target instance namespace. 
+
+			by targetting instance namespace 
+			we can deal with nsdm also sdm. 
+
+			monolithic : 
+				obj1 . empId = None 
+
+			function : 
+				
+				def createNsdm ( objName ) : 
+					objName . empId = None 
+
+				createNsdm ( obj1 )
+	
+			method : 
+				
+				class Employee : 
+					def createNsdm ( self ) : 
+						self . empId = None 
+
+				obj1 . createNsdm ( )
+			
+================================================================================
+
+real time situation 
+~~~~~~~~~~~~~~~~~~~~
+
+class Employee :
+
+        @classmethod
+        def createSdm ( cls ) :
+                cls . compName = None
+                cls . compAddr = None
+
+        def createNsdm( self ) :
+                self . empId = None
+                self . empName = None
+                self . empSal = None
+                self . empSkill = None
+                self . empDOJ = None
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+Employee . createSdm ()
+obj1 . createNsdm ( )
+obj2 . createNsdm ( )
+obj3 . createNsdm (  )
+
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+======================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

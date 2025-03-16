@@ -1,0 +1,196 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+	data member 
+
+METHOD 
+~~~~~~~~~~~~~~~~~
+	why method 
+	what is method 
+	merits of using method 
+	types of method 
+	how to def 
+	how to call 
+	what is cls 
+	what is self 
+	real time situation 
+
+class Employee :
+
+        @classmethod
+        def createSdm ( cls ) :
+
+                cls . compName = None
+                cls . compAddr = None
+
+        def createNsdm ( self ) :
+
+                self . empId = None
+                self . empName = None
+                self . empSal = None
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+Employee . createSdm ()
+obj1 . createNsdm ()
+obj2 . createNsdm ()
+obj3 . createNsdm ()
+
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+
+------------------------------------------------------------------
+
+class Employee :
+
+        @classmethod
+        def createSdm ( cls ) :
+
+                cls . compName = None
+                cls . compAddr = None
+
+        def createNsdm ( self ) :
+
+                self . empId = None
+                self . empName = None
+                self . empSal = None
+
+        def retrieve ( self ) :
+
+                print ( f"{self.__class__.compName} {self.__class__.compAddr}
+{self.empId} {self.empName} {self.empSal}")
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+Employee . createSdm ()
+obj1 . createNsdm ()
+obj2 . createNsdm ()
+obj3 . createNsdm ()
+
+obj1 . retrieve ()
+obj2 . retrieve ()
+obj3 . retrieve ()
+
+
+-------------------------------------------------------------------------------
+
+	ENCAPSULATION 
+
+		CLASS 
+			METHOD 
+			1. NON STATIC METHOD 
+				self . NON STATIC DATA 
+				self . __class__ . STATIC DATA 
+				LOCAL DATA 
+			2. CLASS METOHD 
+				cls . STATIC DATA 
+				LOCAL DATA 
+			3. STATIC METHOD 
+				LOCAL DATA 
+
+===================================================================================
+
+>>> from random import randint 
+>>> 
+>>> randint ( 1000, 10000 )
+5155
+>>> 
+>>> str ( randint ( 1000, 10000 ) ) 
+'9264'
+>>> 
+>>> str ( randint ( 1000, 10000 ) )  . zfill ( 10 )
+'0000004728'
+>>> 'seeree-' + str ( randint ( 1000, 10000 ) )  . zfill ( 10 )
+'seeree-0000002309'
+>>> 
+
+
+==========================================
+from random import randint 
+
+class Employee : 
+
+        @classmethod 
+        def createSdm ( cls ) : 
+
+                cls . compName = None 
+                cls . compAddr = None 
+
+        def createNsdm ( self ) : 
+
+                self . empId = Employee . autoGenId () 
+                self . empName = None 
+                self . empSal = None 
+
+        def retrieve ( self ) : 
+
+                print ( f"{self.__class__.compName} {self.__class__.compAddr} {self.empId} {self.empName} {self.empSal}")
+
+        @staticmethod 
+        def autoGenId ( ) :
+
+                id = 'SEEREE-' + str ( randint ( 1000, 100000 ) ) . zfill ( 10 ) 
+                return id 
+
+obj1 = Employee () 
+obj2 = Employee () 
+obj3 = Employee () 
+
+Employee . createSdm () 
+obj1 . createNsdm () 
+obj2 . createNsdm () 
+obj3 . createNsdm () 
+
+obj1 . retrieve () 
+obj2 . retrieve () 
+obj3 . retrieve () 
+
+=================================================================================
+	
+	IN A CLASS WE CAN DEF N NO OF METHODS.
+	IN A CLASS WE CAN DEF 3 TYPEF OF METHODS.
+	IN A CLASS WE CAN DEF 4 [ C / R / U / D ] CATEG OF METHODS.
+
+	FROM 4 CATEG OF METTHODS 
+	C CATEGORY METHOD MUST BE EVALUATED COMPULSORY AT FIRST. 
+
+	TO VALUATE A METHOD COMPULSORY AT FIRST 
+	OOPS INTRODUCED constructor  MECHANISM.
+
+CONSTRUCTOR 
+~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

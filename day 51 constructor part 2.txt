@@ -1,0 +1,182 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+	data member 
+	member function / method 
+	
+CONSTRUCTOR AND REPRESENTATION 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	why constructor 
+		in class we can def N no of methods 
+		in class we can def 3 types of methods 
+		in class we can def 4 categ of methods 
+		from 4 categ of methods 
+		c method must be evlauated compulsory at first 
+		for this we need to deal with consturctor. 
+
+	how to def constructor 
+		1. method 
+		2. __init__ () 
+		3. self 
+		4. return None 
+
+	types of constructor 
+		1. default 
+		2. param 	
+	
+	responsibility of constructor 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	object create  -> constructor -> attr create 
+
+	attr 
+		static attr 		1 time 
+		non static attr 	n times 
+
+	CONSTRUCTOR IS REPNSIBLE TO CREATE NON STATIC ATTR 
+	BCZ 
+	CONSTRUCTOR WILL WORK n TIMES 
+	AND 
+	NON STATIC ATTR REQ n TIMES 
+
+	CONSTURCTOR SHOULD NOT RESPONSIBLE TO CREATE STATIC ATTR 
+	BCZ 
+	CONSTRUCTOR WILL WORK n TIMES 
+	BUT 
+	STAITC ATTE REQ 1 TIME. 
+
+	TO CREATE STATIC ATTR, CLASS IS ITSELF REPONSIBLE. 
+
+------------------------------------------------------------------
+
+	class 
+		static attr 
+
+		def __init__ ( self ) : 
+
+			self . non static attr 
+
+----------------------------------------------------------------
+
+class Employee :
+
+        compName = 'seeree'
+        compAddr = 'bbsr'
+
+        def __init__ ( self , a , b, c  ) :
+
+                self . empId = a
+                self . empName = b
+                self . empSal = c
+
+obj1 = Employee ( 1 , 'sita' , 15000 ) # objec create -> constructor -> non attr add -> non static init  
+obj2 = Employee ( 2, 'rama' , 25000 )
+obj3 = Employee ( 3, 'laxmi' , 35000 )
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+---------------------------------------------------------------------
+
+class Employee :
+
+        compName = 'seeree'
+        compAddr = 'bbsr'
+
+        def __init__ ( self , empId , empName, empSal  ) :
+                self . empId = empId
+                self . empName = empName
+                self . empSal = empSal
+
+obj1 = Employee ( 1 , 'sita' , 15000 ) # objec create -> constructor -> non
+attr add -> non static init  
+obj2 = Employee ( 2, 'rama' , 25000 )
+obj3 = Employee ( 3, 'laxmi' , 35000 )
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+------------------------------------------------------------------------------
+
+		CONSTRUCTOR 		VS 		REPRESENTATION 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+		METHOD 					METHOD 
+
+		__INIT__ () 				__REPR__ () 
+
+		SELF 					SELF 
+
+		RETURN NONE 				RETURN STR 
+
+		OBJECT CREATE 				OBJECT PRINT 
+
+
+class Employee :
+
+        compName = 'seeree'
+        compAddr = 'bbsr'
+
+        def __init__ ( self , empId , empName, empSal  ) :
+                self . empId = empId
+                self . empName = empName
+                self . empSal = empSal
+
+        def __repr__ ( self ) :
+                return f"{self.__class__.compName} {self.__class__.compAddr}
+{self.empId} {self.empName} {self.empSal}"
+
+obj1 = Employee ( 1 , 'sita' , 15000 ) # objec create -> constructor -> non
+attr add -> non static init  
+obj2 = Employee ( 2, 'rama' , 25000 )
+obj3 = Employee ( 3, 'laxmi' , 35000 )
+
+print ( obj1 )
+print ( obj2 )
+print ( obj3 )
+
+========================================================================================
+
+class Student :
+
+        instName = 'seeree'
+        instAddr = 'bbsr'
+
+        def __init__ ( self , id , name , course  ) :
+
+                self . id = id
+                self . name = name
+                self . course = course
+
+        def __repr__ ( self ) :
+
+                return f"{self.__class__.instName} {self.instAddr} {self.id} {self.name} {self.course}"
+
+
+obj1 = Student ( 1 , "sita" , "python")
+print ( obj1 )
+
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

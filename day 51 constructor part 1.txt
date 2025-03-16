@@ -1,0 +1,189 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+	data member 
+	method 
+
+CONSTRUCTOR AND REPRESENTATION 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	why constructor : 
+
+		in a class we can def N no of methods. 
+		in a class we can def 3 types of methods. 
+		in a class we can def 4 categ of methods.
+
+		from 4 categ of method 
+		create categ must be evaluated 
+		compulsory at first. 
+
+		to evluate a method 
+		compoulsory at first 
+		oops introduced constructor mechanism. 
+
+	what is constructor : 
+
+		1. constructor is a method. 
+		method : function def inside a class 
+
+		2. in c++ / java 
+		constructor name must be same as the class name. 
+
+		3. in python 
+		constructor name must be __init__ () for any class. 
+
+		4. return of constructor must be None
+		nither pvm will raise TypeError. 
+
+		5. constructor is a special method 
+		bcz constructor will be evaluated implicitlly 
+		at the time of object creation. 
+
+		6. for N no objects constructor will be evaluated N times. 
+		6. for 0 no objects constructor will be evaluated 0 times. 
+	
+		7. constructor is stronglly related with object. 
+
+		8. if a method wants to relate with object 
+		that method must be a non static  method. 
+
+		9. constructor is a non static method. 
+
+		10. self is the compulsory param for constructor. 
+
+--------------------------------------------------------------------
+	how to def constructor 
+
+		1. consturctor is a method. 
+		2. name must be __init__ 
+		3. self is the compulsory param 
+		4. return type must be None 
+
+------------------------------------------------------------------
+
+class Test :
+
+        def __init__ ( self ) :
+                print ( "hello i am consructor ")
+                return None
+
+obj1 = Test ()
+obj2 = Test ()
+obj3 = Test ()
+
+==================================================================
+	
+	types of constructor :
+	~~~~~~~~~~~~~~~~~~~~~~
+
+	constructor can be two types. 
+
+	1. default constructor 
+
+		class Test : 
+			def __init__ ( self ) : 
+				pass 
+
+	2. param constructor 
+		
+		class Test : 
+			def __init__ ( self , p1 .  . . pn  ) : 
+				pass 
+
+		we need to supply param for param constructor 
+		at the time of object creation. 
+
+class Test :
+
+        def __init__ ( self, param  ) :
+                print ( f"hello i am param consructor and param is {param}")
+                return None
+
+obj1 = Test ( 10 )
+obj2 = Test ( 20 )
+obj3 = Test ( 30 )
+
+===============================================================
+
+	NOTE : 
+		IN C++ / JAVA 
+		IN A CLASS WE CAN DEF n NO OF CONSTRUCTOR 
+
+		BUT 
+		IN PYTHON 
+		IN A CLASS WE CAN DEF AT MOST 1 CONSTRUCTOR ONLY
+		BCZ 
+		PYTHON DOES NOT SUPPORT OVERLOADING MECHANISM. 
+
+		FUNCTION : 
+
+			PYTHON DOES NOT SUPPORT FUNCTION OVERLOADING 
+			IF WE WILL TRY TO OVERLOADING FUNCTION 
+			PVM WILL CONSIDER LAST DEF AS THE FINAL DEF. 
+
+class Test :
+
+        def __init__ ( self, param = None  ) :
+
+                if param == None :
+                        print ( "hello i am default constructor.")
+                else :
+                        print ( f"hello i am param consructor and param is {param}")
+                return None
+
+obj1 = Test ( 10 )
+obj2 = Test ( 20 )
+obj3 = Test ( 30 )
+
+obj4 = Test ()
+
+
+============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

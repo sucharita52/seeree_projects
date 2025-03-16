@@ -1,0 +1,230 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+		why class 
+			user def data type 
+		how to def class 
+			class <className> : 
+				indent 
+				body 
+				unindent 
+		why object 
+			data type -> variable 
+			class -> object / instance 
+		how to def object 
+			objName = className () 
+		class vs object 
+
+		class 		vs 	object 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	data type 			variables 
+	
+	class namespace 		instance namespace 
+
+	1 time memory 			N times memory 
+
+	stack 				heap 
+
+	we can not move 		we can move from in to cn 
+	from cn to in 			objName . __class__ 
+
+data member 
+~~~~~~~~~~~~~
+	what at attr / data member 
+	types of attr / data member 
+	what is class attr 
+	what is inst attr 
+	class attr vs inst attr 
+	static data member vs non static data member 
+
+		class attr 	vs 	inst attr 
+		static attr 	vs 	non static attr 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		1 time 			N times 
+
+		can be accessed by 	only can be accessed by in 
+		cn and in 
+
+====================================================================
+
+	REAL TIME SITUATION 
+	~~~~~~~~~~~~~~~~~~~~~
+
+	PROJECT -> EMPLOYEE MNG SYSTEM 
+
+	data type -> Employee 
+
+		data member / attr 
+
+		compName 		1 time 		sdm ca 
+		compAddr 		1 time 
+		empId 			N times 	nsdm ia 
+		empName 		N times 
+		empSal 			N times 
+		empSkill 		N times 
+		empDOJ 			N times 
+		etc 				
+
+=========================================================
+
+
+	ATTR 
+		className . classAtrr 
+		instName . __class__ . classAttr 
+
+		instName . instAttr 
+		
+
+	syntax : 
+
+	CREATE 
+
+		className . sdm  = attrValue 
+		instName . __class__ . sdm  = attrValue 
+		instName . nsdm  = attrValue 
+
+	UPDATE 
+		className . sdm  = attrValue 
+		instName . __class__ . sdm  = attrValue 
+		instName . nsdm  = attrValue 
+
+	RETRIEVE 
+
+		print ( className . sdm )
+		print ( instName . __class__ . sdm )
+		print ( instName . nsdm )
+
+	DELETE 
+
+		del className . sdm 
+		del instName . __class__ . sdm 
+		del instName . nsdm
+
+============================================================ 
+# create class 
+class Test :
+        pass
+
+# create object 
+obj1 = Test ()
+obj2 = Test ()
+obj3 = Test ()
+
+# create attr 
+
+Test . a = 10
+obj1 . x = 100
+obj2 . y = 200
+obj3 . z = 300
+
+print ( Test . __dict__ )
+print ( obj1 . __dict__  )
+print ( obj2 . __dict__  )
+print ( obj3 . __dict__  )
+
+print ( Test . a )
+print ( obj1 . __class__  . a )
+print ( obj2 . __class__  . a )
+print ( obj3 . __class__  . a )
+
+print ( obj1 . x )
+print ( obj2 . y )
+print ( obj3 . z )
+
+del obj2 . y
+print ( obj2 . __dict__  )
+
+
+
+
+============================================================
+
+class Employee :
+        pass
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+Employee . compName = None
+Employee . compAddr = None
+
+obj1 . empId = None
+obj1 . empName = None
+obj1 . empSal = None
+
+obj2 . empId = None
+obj2 . empName = None
+obj2 . empSal = None
+
+obj3 . empId = None
+obj3 . empName = None
+obj3 . empSal = None
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+==============================================================
+
+	Student 
+		instName 	1	sdm / ca 
+		instAddr 
+		sutdId 		N	nsdm / ia 
+		studName 
+		studCourse 
+
+	Player 
+		teamName 
+		coach 
+		playerId 
+		playerName 
+		playerType 
+
+	Account 
+		bankName 
+		bankAddr 
+		accid 
+		accName 
+		accBal 
+
+	Product 
+		compName 
+		compAddr 
+		prodId 
+		prodName 
+		prodType 
+
+=============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

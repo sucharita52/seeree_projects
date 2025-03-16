@@ -1,0 +1,253 @@
+
+OOPs Using Python 
+~~~~~~~~~~~~~~~~~~~~
+
+	class and object 
+		why class 
+		how to def class 
+		why object 
+		how to def object 
+		class vs object 
+
+	attr / data member 
+		what is attr 
+		types of attr 
+		what is class attr / static data member 
+		what is inst attr / non static data member 
+		curd operation 
+		real time situation 
+
+------------------------------------------------------
+
+class Employee :
+        pass
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+Employee . compName = None
+Employee . compAddr = None
+
+obj1 . empId = None
+obj1 . empName = None
+obj1 . empSal = None
+
+obj2 . empId = None
+obj2 . empName = None
+obj2 . empSal = None
+
+obj3 . empId = None
+obj3 . empName = None
+obj3 . empSal = None
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+=========================================================================
+	
+	MONOLITHIC APPROACH 
+
+		LIMITATION : 
+
+			1. NO READABILITY 
+			2. NO REUSEABILITY 
+			3. NO MAINTAINABILITY 
+			4. NO MODULAR STYLE PROGRAMMING 
+
+	to overcome from above limitations 
+	we have to introduce 
+	FUNCTION APPROACH. 
+
+		MERITS : 
+			1. READABILITY 
+			2. REUSEABILITY 
+			3. MAINTAINABILITY 
+			4. MODULAR STYLE PROGRAMMING 
+			
+class Employee :
+        pass
+
+
+def createSdm ( className ) :
+        className . compName = None
+        className . compAddr = None
+
+def createNsdm( objName ) :
+        objName . empId = None
+        objName . empName = None
+        objName . empSal = None
+        objName . empSkill = None
+        objName . empDOJ = None
+
+obj1 = Employee ()
+obj2 = Employee ()
+obj3 = Employee ()
+
+createSdm ( Employee )
+createNsdm ( obj1 )
+createNsdm ( obj2 )
+createNsdm ( obj3 )
+
+
+print ( Employee . __dict__ )
+print ( obj1 . __dict__ )
+print ( obj2 . __dict__ )
+print ( obj3 . __dict__ )
+
+
+====================================================================================
+
+	function approach 
+	~~~~~~~~~~~~~~~~~~~~
+		merits : 
+			readability 
+			reuseability 
+			maintainability 
+			modular style programming 
+
+		limitation : 
+			no security 
+
+			logic inside a function 
+			is not secure 
+
+			bcz function designed for emp class 
+			can be misused by animal class 
+
+			bcz function designed for emp obj 
+			can be missused by animal object. 
+
+	for the above problem stmt 
+	we have to introduce 
+	METHOD APPROACH 
+
+		WHAT IS METHOD : 
+
+			METHOD IS NOTHING BUT A FUNCTION 
+			BUT DEF INSIDE A CLASS. 	
+
+		function 
+			merits : 
+				readability 
+				reuseability 
+				maintainability 
+				modular style progrmming 
+
+			limitation : 
+				no encapsualtion 
+
+		method : 
+			merits : 
+				readability 
+				reuseability 
+				maintainability 
+				modular style progmming 
+				encapsulation 
+				
+
+		ENCAPSUALTION : 
+			BINDING OF RELATED INFORMATION AND OPERATION INTO A SINGLE UNIT 
+			IS KNOWN AS ENCAPSUALTION. 
+			
+			BINDING OF RELATED ATTR AND METHOD INTO A SINGLE CLASS 
+
+		UNIT 
+			OPERATION 
+
+				INFORMATION 
+
+		CLASS 
+			METHOD 
+				ATTR 
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
